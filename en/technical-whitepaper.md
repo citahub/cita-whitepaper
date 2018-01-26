@@ -39,7 +39,9 @@ There’s no special hardware requirement other than a common PC. Transactions c
 
 Customization and integration is easy with CITA’s microservice architecture. Microservices are loosely coupled and their communications are only via messages. Hence microservices/components in CITA can be replaced by users with any programming language, as long as the microservice implements standard internal API’s to parse, process and return messages. External systems can connect directly to the message bus too, in order to read internal messages at runtime, for easy and deep integration.
 
-![Fig 1. CITA Microservice Architecture](architecture.png)
+![Fig 1a. CITA Microservice Architecture](../en/cita-network.png)
+
+![Fig 1b. CITA Microservice Architecture](../en/cita-parallel.png)
 
 ## Consensus
 
@@ -107,7 +109,7 @@ Privacy protection based on pseudonyms conceal the sender and receiver of a tran
 
 Some advances in cryptography, like zero knowledge proofs or full homomorphic encryption, help us to proceed a transaction without revealing its data. However, technologies of such kind have their own bottlenecks against practicality and maturity.
 
-CITA features partial-execution to protect privacy for its users. Before a private transaction is submitted, transaction data is encrypted. The encrypted transaction is then sent to relevant nodes who holds decryption key through a peer-to-peer private transport connection, while its hash value gets packed into the block. Private transactions are only stored and executed on relevant nodes, completely eliminating the risk of privacy leaks.
+CITA features partial-execution to protect privacy for its users. Before a private transaction is submitted, transaction data is encrypted. The encrypted transaction is  then sent to relevant nodes through a peer-to-peer private transport connection, while its hash value gets packed into the block. Private transactions are only stored and executed on relevant nodes, completely eliminating the risk of privacy leaks.
 
 ## Authentication and Authorization
 
