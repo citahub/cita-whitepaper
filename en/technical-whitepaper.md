@@ -14,7 +14,7 @@ Node configuration and network status vary notably on open networks. In order to
 
 In a partitioned system, it’s known that we cannot have both availability and consistency at the same time. Public blockchains usually favor availability since it is much harder to recover from emergencies in a highly decentralized governance model. In enterprise blockchain applications the existence of efficient off-chain collaboration and governance means that faster response times are possible, so that users can favor consistency within the system.
 
-As users of blockchain applications increase over time, the system has to scale to provide more and more transaction processing and storage capacity. Scalability while maintaining  security is a must-have in the context of  blockchain technology and although we do not see this in public chain infrastructures yet, permissioned blockchains can presently produce a viable solution to this conundrum.  
+As users of blockchain applications increase over time, the system has to scale to provide more and more transaction processing and storage capacity. Scalability while maintaining  security is a must-have in the context of  blockchain technology and although we do not see this in public chain infrastructures yet, permissioned blockchains can presently produce a viable solution to this conundrum.
 
 Data stored on the blockchain is public to all nodes, and while enterprise blockchain applications ask for privacy protection, the solutions based on pseudonyms or temporary transaction keys are not enough to satisfy requirements. Moreover, privacy solutions using bleeding-edge cryptography are not yet mature and fast enough for real world use. We believe what enterprises need is an imperfect but practical solution, and a modularized blockchain architecture with which future privacy solutions can easily plug-in.
 
@@ -91,7 +91,7 @@ In contrast to a public blockchain, permissioned blockchains usually don’t iss
 
 ### View
 
-Blockchain is an Online Transaction Processing (OLTP) system: users broadcast their transactions; nodes execute the transactions upon receival. There are alternatives with different pros and cons to transaction processing in blockchain systems. Nevertheless, most blockchain systems pick one of them, and are thus inflexible and encounter difficulty in  meeting the needs of varied scenarios. By what we call transaction tunnels, CITA supports multiple-strategy transaction processing and basic parallelization. 
+Blockchain is an Online Transaction Processing (OLTP) system: users broadcast their transactions; nodes execute the transactions upon receival. There are alternatives with different pros and cons to transaction processing in blockchain systems. Nevertheless, most blockchain systems pick one of them, and are thus inflexible and encounter difficulty in  meeting the needs of varied scenarios. By what we call transaction tunnels, CITA supports multiple-strategy transaction processing and basic parallelization.
 
 One can set multiple independent views when configuring CITA. Each view has its own executor and state data model, and registers its executor to the transaction router. After ordering by consensus service, transactions are dispatched via the router to corresponding executors. Transaction sets processed in different views may or may not have intersections.
 
@@ -101,7 +101,7 @@ CITA runs independent transaction execution services for different views, due in
 
 ![Fig 3. Transaction Router and Views](router-and-views.png)
 
-### Privacy 
+### Privacy
 
 Replicated execution of smart contracts and privacy are contradictory in nature. Execution/verification requires that all validator nodes can read data within a transaction. However, to protect privacy, irrelevant validator nodes shall not be allowed to see the respective data.
 
@@ -127,7 +127,7 @@ CITA also features role-based access control for enterprise-level applications. 
 
 Blockchain is a tool used to reflect the **consensus of human**. In normal cases, blockchain facilitates coordination automation. In abnormal cases, erroneous view data may occur. Calibrations can be made based on immutable transaction history. As a distributed system of equivalent peers, blockchain has no central node in its networking topology, but its governance may be carried out in either decentralized or centralized processes. With regards to the principle that **transaction history must be immutable** while views are mutable, CITA supports various governance structures and view amendment capabilities.
 
-There is a superadmin role in CITA. Benefiting from a flexible authentication service design, superadmins may have any authentication logic. In a centralized governance method, superadmins can be controlled by a core member. In a multi-center governance method, core members can constitute a committee to manage the superadmin together. 
+There is a superadmin role in CITA. Benefiting from a flexible authentication service design, superadmins may have any authentication logic. In a centralized governance method, superadmins can be controlled by a core member. In a multi-center governance method, core members can constitute a committee to manage the superadmin together.
 
 A centralized governance role/committee is able to agree on a resolution via some off-chain channel, which allows the system to recover rapidly when emergencies happen. When problems like mistaken operations, software errors or hardware errors happen, systems will enter into an emergency status. We define two types of emergency statuses: Transaction Recoverable and Message Recoverable.
 
@@ -140,4 +140,4 @@ When a system is in a message recoverable status, nodes are unable to execute tr
 For enterprise-level blockchain applications, we propose CITA, a blockchain framework with smart contract support. In CITA, functionalities of a blockchain node are decoupled into microservices, including consensus, transaction execution, peer-to-peer network, quota, authentication and authorization. Microservices coordinate via a message bus. CITA is designed to be a highly extensible and a future-proof general blockchain framework, where users can configure and customize services on demand.
 
 [1]:http://pmg.csail.mit.edu/papers/osdi99.pdf
-[2]:https://tendermint.readthedocs.io/en/master/introduction.html#consensus-overview
+[2]:https://tendermint.com/docs/introduction/introduction.html#consensus-overview
